@@ -1,12 +1,8 @@
-<%-- 
-    Document   : indexx
-    Created on : Dec 20, 2020, 10:59:39 PM
-    Author     : nsats
---%>
 
-<%@page import="com.mycompany.icbt.oop.web.student"%>
-<%@page import="com.mycompany.icbt.oop.web.web_helper"%>
+<%@page import="org.icbt.web.project.Student"%>
+<%@page import="org.icbt.web.project.WebHelper"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +21,7 @@
     <body background="back.png">
         <%            
            
-         student[] students = web_helper.getStudents();
+         Student[] students = WebHelper.getStudents();
             
             out.print("<br>");
             out.print("<img src='cardiff.png'/>");
@@ -34,12 +30,12 @@
             out.print("<br>");
             out.print("<div class='table-users'>");
             out.print("<div class='header'");
-            out.print("<a class='fas fa-home'>" + web_helper.getGreeting() + "</a>");
+            out.print("<a class='fas fa-home'>" + WebHelper.getGreeting() + "</a>");
             out.print("</div>");
             out.print("<table id='student-tbl' class='display' cellspacing='0'>");
             out.print("<thead><tr><th>Student Number</th><th>Student Name</th><th>NIC Number</th></tr></thead>");
             out.print("<tbody>");
-            for(student st : students) {
+            for(Student st : students) {
                 
                     out.print("<tr>");
                     out.print("<td>" + st.getId() +"</td>");
@@ -60,3 +56,4 @@
     
     </body>
 </html>
+
