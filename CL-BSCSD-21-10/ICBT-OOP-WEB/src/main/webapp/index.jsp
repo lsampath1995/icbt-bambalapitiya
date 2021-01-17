@@ -2,7 +2,6 @@
 <%@page import="org.icbt.web.project.Student"%>
 <%@page import="org.icbt.web.project.WebHelper"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,10 +11,9 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
         </script>
+        <link rel="stylesheet" type="text/css" href="index.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <link rel="stylesheet" href="fontawesome.min.css">
         <title>Home Page</title>
     </head>
     <body background="back.png">
@@ -56,4 +54,3 @@
     
     </body>
 </html>
-

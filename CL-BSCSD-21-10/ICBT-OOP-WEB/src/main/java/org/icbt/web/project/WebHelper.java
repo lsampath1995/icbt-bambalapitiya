@@ -11,19 +11,18 @@ public class WebHelper {
     
     
     public static Student[] getStudents() {
-        
-	    Student [] Students = new Student[8];
+        Student [] students = new Student[8];
 
-            Students[0] = new Student("ST001", "Britany Norton", "124464635 V");
-            Students[1] = new Student("ST002", "Merissa Pletcher", "126464385 V");
-            Students[2] = new Student("ST003", "Carmelita Litherland", "164462390 V");
-            Students[3] = new Student("ST004", "Buck Birdsong", "126464643 V");
-            Students[4] = new Student("ST005", "Dennise Longwell", "124646376 V");
-            Students[5] = new Student("ST006", "Zonia Suits", "124453731 V");
-            Students[6] = new Student("ST007", "Nan Xavier", "125445431 V");
-            Students[7] = new Student("ST008", "Marlen Hatfield", "126015453 V");
+            students[0] = new Student("ST001", "Britany Norton", "124464635 V");
+            students[1] = new Student("ST002", "Merissa Pletcher", "126464385 V");
+            students[2] = new Student("ST003", "Carmelita Litherland", "164462390 V");
+            students[3] = new Student("ST004", "Buck Birdsong", "126464643 V");
+            students[4] = new Student("ST005", "Dennise Longwell", "124646376 V");
+            students[5] = new Student("ST006", "Zonia Suits", "124453731 V");
+            students[6] = new Student("ST007", "Nan Xavier", "125445431 V");
+            students[7] = new Student("ST008", "Marlen Hatfield", "126015453 V");
         
-        return Students;
+        return students;
     }
     
     public static String getGreeting() {
@@ -35,13 +34,12 @@ public class WebHelper {
     }
     
     public static User authenticate(String username, String password) {
+        User authenticatedUser = null;
         
-	User authenticatedUser = null;
-        
-        //These data loading from the DB
+        //This should loaded from the DB
         User user = new User("admin", "John", "Smith", "admin123");
         
-        //Authenticating the username & password
+        //Authenticated the users password
         if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
             authenticatedUser= user;
         }
@@ -51,20 +49,17 @@ public class WebHelper {
     
     
     public static User authenticate(Cookie[] cookies, HttpSession session) {
-        
-        // Getting the old authenticated user data from cookie session
+        // Authenticate the user from cookie session
         User user = null;
 
-        // Iterating all the available cookies from the client request
+        // Iterate all the cookies from the client request
         for (Cookie cookie : cookies) {
-            
-            // Checking SESID cookie
+            // Checks SESID cookie
             if (cookie.getName().equals("SESID")) {                        
-                
-                // Lookingup for SESID cookie value from sessions
+                // Lookup SESID cookie value from sessions
                 Object sessionObj = session.getAttribute(cookie.getValue());
 
-                // Loading the user from session object if it is exists
+                // Load the user from session object if it exists
                 if (sessionObj != null) {
                      user = (User)sessionObj;
                 }
@@ -74,8 +69,7 @@ public class WebHelper {
     }
     
     public static void redirectToLogin(HttpServletResponse response) throws IOException{
-        
-	response.sendRedirect("login.jsp");
+        response.sendRedirect("login.jsp");
     }
     
 }

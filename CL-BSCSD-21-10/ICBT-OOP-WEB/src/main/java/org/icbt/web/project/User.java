@@ -2,7 +2,6 @@
 package org.icbt.web.project;
 
 public class User {
-    
     private String username;
     
     private String firstName;
@@ -12,59 +11,49 @@ public class User {
     private String password;
 
     public User() {
-        
-	this.username = "";
+        this.username = "";
         this.firstName = "";
         this.lastName = "";
         this.password = "";
     }
 
     public User(String username, String firstName, String lastName, String password) {
-        
-	this.username = username;
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
     }
 
     public String getUsername() {
-        
-	return username;
+        return username;
     }
 
     public void setUsername(String username) {
-        
-	this.username = username;
+        this.username = username;
     }
 
     public String getFirstName() {
-        
-	return firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        
-	this.firstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        
-	return lastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        
-	this.lastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getPassword() {
-        
-	return password;
+        return password;
     }
 
     public void setPassword(String password) {
-        
-	this.password = password;
+        this.password = password;
     }
     
     
